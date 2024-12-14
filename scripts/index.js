@@ -10,20 +10,15 @@ function createCard(cardData, deleteCallback) {
   const cardTitle = cardElement.querySelector('.card__title');
   const cardImage = cardElement.querySelector('.card__image');
   const deleteButton = cardElement.querySelector('.card__delete-button');
-
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
-
   deleteButton.addEventListener('click', () => deleteCallback(cardElement));
-
   return cardElement;
 };
 
 // @todo: Функция удаления карточки
 function deleteCard(cardElement) {
-  console.log(cardElement);
-  console.log(cardElement instanceof Element)
   cardElement.remove();
 };
 
